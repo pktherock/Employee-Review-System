@@ -18,10 +18,12 @@ Steps to compete this project
         - Add Employee
         - Update Employee
         - Delete Employee
+        - View Employee
       - Review
         - Add Review
         - Update Review
         - Delete Review
+        - view review
 14. Install packages ✅
     - npm i ejs
     - npm i express-ejs-layouts
