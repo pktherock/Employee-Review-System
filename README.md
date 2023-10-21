@@ -1,13 +1,13 @@
-# Welcome to Habit Tracker App
-  - Coding Ninja Backend Skill Test 1
+# Welcome to Employee Review System App
 
-## Features 
+- Coding Ninja Backend Skill Test 2
+
+## Features
 
 ## Packages used in this project.
 
 ## How to run this project locally
 
-
 ### Live Demo Link
-  - todo
 
+- todo

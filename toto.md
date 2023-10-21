@@ -14,11 +14,14 @@ Steps to compete this project
 12. write server start code to listen request ✅
 13. List Feature in Habit tracker 
       - Authentication and Authorization ✅
-      - habit
-        - add habit
-        - update habit
-        - delete habit
-        - track habit
+      - Employee
+        - Add Employee
+        - Update Employee
+        - Delete Employee
+      - Review
+        - Add Review
+        - Update Review
+        - Delete Review
 14. Install packages ✅
     - npm i ejs
     - npm i express-ejs-layouts
