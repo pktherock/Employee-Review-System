@@ -66,6 +66,7 @@ class UserService {
       userId: user.id,
       email,
       userName: user.userName,
+      role: user.role
     };
     const accessToken = generateAccessToken(payload);
     const refreshToken = generateRefreshToken(payload);

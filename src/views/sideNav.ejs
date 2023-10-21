@@ -1,0 +1,26 @@
+<nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar px-0">
+  <div class="position-sticky">
+    <ul class="nav flex-row flex-md-column text-center mt-1">
+      <li class="nav-item border-bottom">
+        <a class="nav-link active" href="/"> Home </a>
+      </li>
+
+      <% if(!locals.userName) { %>
+      <li class="nav-item border-bottom">
+        <a class="nav-link active" href="/api/v1/auth/login"> Login </a>
+      </li>
+      <% } else { if(locals.role === "ADMIN") { %>
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="/api/v1/employee"> Employees </a>
+      </li>
+      <% } %>
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="/api/v1/review"> Reviews </a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="/api/v1/review/feedback"> Feedbacks </a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</nav>

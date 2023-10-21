@@ -9,7 +9,9 @@ const setLastVisit = (req, res, next) => {
   if (req.session?.accessToken && req.session?.refreshToken) {
     try {
       const payload = jwtRefreshDecode(req.session.refreshToken);
+      // console.log(payload);
       res.locals.userName = payload.userName;
+      res.locals.role = payload.role;
     } catch (error) {
       console.log(error);
     }

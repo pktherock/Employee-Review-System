@@ -21,6 +21,8 @@ import {
   notFoundHandler,
   setLastVisit,
 } from "../src/api/common/index.js";
+import { employeeRouter } from "./api/v1/features/employee/index.js";
+import { reviewRouter } from "./api/v1/features/review/indes.js";
 
 const app = express();
 
@@ -86,11 +88,10 @@ app.get("/", (req, res) => {
 app.use("/api/v1/auth", authRouter);
 
 // all employee routes
-// todo
+app.use("/api/v1/employee", employeeRouter);
 
 // all review routes
-// todo
-
+app.use("/api/v1/review", reviewRouter);
 
 // Middleware to handle 405(not allowed) error
 // Api end point not found
