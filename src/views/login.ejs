@@ -1,0 +1,43 @@
+<div class="mb-5 d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-5 w-50 shadow">
+    <h1 class="mb-4 header">Login</h1>
+
+    <% if(message) { %>
+    <div class="alert alert-danger" role="alert"><%= message %></div>
+    <% } %>
+    <div class="alert alert-info" role="alert">
+      Test user Email: <span class="fw-bold">test@gmail.com</span> Test user
+      password: <span class="fw-bold">123456</span>
+    </div>
+
+    <form action="/api/v1/auth/login" method="POST">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="please enter your email"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="please enter your password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-50">Login</button>
+      <button type="button" class="btn btn-link">
+        <a href="/api/v1/auth/register">Register</a>
+      </button>
+    </form>
+  </div>
+</div>

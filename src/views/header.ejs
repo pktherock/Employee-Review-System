@@ -1,0 +1,74 @@
+<nav
+  class="navbar navbar-expand-md sticky-top navbar-dark bg-dark shadow-lg"
+  style="background-color: #181642 !important; color: white"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Employee Review System</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <!-- todo -->
+      </ul>
+
+      <form
+        class="d-flex"
+        role="search"
+        role="search"
+        action="/api/v1/habits/search"
+        method="get"
+      >
+        <input
+          class="form-control me-2"
+          type="search"
+          name="searchKey"
+          placeholder="Search by name"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item dropstart">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <% if (locals.userName) { %> <%= locals.userName %> <% } else { %>
+            User <% } %>
+          </a>
+          <ul class="dropdown-menu">
+            <% if (locals.userName) { %>
+            <li>
+              <a
+                class="dropdown-item"
+                onclick="handleLogoutBtnClick()"
+                role="button"
+                >Logout</a
+              >
+            </li>
+            <% } else { %>
+            <li>
+              <a class="dropdown-item" href="/api/v1/auth/login">Login</a>
+            </li>
+            <% } %>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
