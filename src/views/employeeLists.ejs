@@ -13,43 +13,43 @@
       class="col-md-6 bg-primary-subtle p-5 border border-info"
       style="min-height: 70vh"
     >
-      <h2>Assign Employee to Review</h2>
+      <h2>Assign Employee for Review</h2>
       <p>
         Note: Employee one email will be the reviewer, and employee two email
         will be reviewed by employee one
       </p>
       <form
-        action="/api/v1/employee/assign-to-review"
+        action="/api/v1/employee/assign-for-review"
         method="POST"
         class="pt-2"
       >
         <div class="mb-3">
-          <label for="email" class="form-label"
+          <label for="emailFrom" class="form-label"
             >Employee one email (Reviewer)</label
           >
           <input
-            type="empOneEmail"
+            type="email"
             class="form-control"
-            id="email"
-            name="email"
+            id="emailFrom"
+            name="emailFrom"
             placeholder="please enter emp one email"
             required
           />
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label">Employee Two email</label>
+          <label for="emailTo" class="form-label">Employee Two email</label>
           <input
-            type="empTwoEmail"
+            type="email"
             class="form-control"
-            id="email"
-            name="email"
-            placeholder="please enter emp one email"
+            id="emailTo"
+            name="emailTo"
+            placeholder="please enter emp two email"
             required
           />
         </div>
 
         <button type="submit" class="btn btn-primary w-100">
-          Assign To Review
+          Assign For Review
         </button>
       </form>
     </div>

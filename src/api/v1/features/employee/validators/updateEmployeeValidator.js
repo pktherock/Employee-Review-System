@@ -1,8 +1,9 @@
 import asyncHandler from "express-async-handler";
 import { body, validationResult } from "express-validator";
 import STATUS_CODE from "../../../../../constants/statusCode.js";
+import { userRoles } from "../../../../../constants/userRole.js";
 
-const newEmployeeValidator = asyncHandler(async (req, res, next) => {
+const updateEmployeeValidator = asyncHandler(async (req, res, next) => {
   const rules = [
     body("name")
       .trim()
@@ -25,6 +26,12 @@ const newEmployeeValidator = asyncHandler(async (req, res, next) => {
       .optional()
       .isLength({ min: 6 })
       .withMessage("password must be at least length of 6"),
+    
+    body("empType")
+      .trim()
+      .optional()
+      .isIn(userRoles)
+      .withMessage("roleType should be ADMIN or EMP"),
   ];
 
   await Promise.all(rules.map((rule) => rule.run(req)));
@@ -54,4 +61,4 @@ const newEmployeeValidator = asyncHandler(async (req, res, next) => {
   return next();
 });
 
-export default newEmployeeValidator;
+export default updateEmployeeValidator;

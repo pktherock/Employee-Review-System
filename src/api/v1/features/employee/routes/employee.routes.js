@@ -4,6 +4,7 @@ import employeeController from "../controllers/employee.controller.js";
 import jwtAuth from "../../../middlewares/jwtAuth.middleware.js";
 import newEmployeeValidator from "../validators/newEmployee.validator.js";
 import isSuperAdmin from "../middlewares/isSuperAdmin.middleware.js";
+import updateEmployeeValidator from "../validators/updateEmployeeValidator.js";
 const employeeRouter = Router();
 
 employeeRouter.use(jwtAuth);
@@ -35,6 +36,7 @@ employeeRouter.get(
 employeeRouter.post(
   "/update-employee/:userId",
   isAdmin,
+  updateEmployeeValidator,
   isSuperAdmin,
   employeeController.updateEmployee
 );
