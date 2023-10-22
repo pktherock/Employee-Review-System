@@ -1,27 +1,48 @@
-<div class="my-5 d-flex justify-content-center ">
-  <div class="card p-5 w-50 shadow">
+<div class="my-5 d-flex justify-content-center">
+  <div class="card p-5 w-75 shadow">
     <h1 class="mb-4 header">Login</h1>
 
     <% if(message) { %>
     <div class="alert alert-danger" role="alert"><%= message %></div>
     <% } %>
-    <div class="alert alert-info text-secondary" role="alert">
-      Test Admin Email:
-      <span class="fw-bold text-success">admin@gmail.com</span> Test Admin
-      password: <span class="fw-bold text-success">123456</span>
-    </div>
-    <div class="alert alert-info text-secondary" role="alert">
-      Test Emp1 Email:
-      <span class="fw-bold text-success">emp1@gmail.com</span> Test Emp1
-      password: <span class="fw-bold text-success">123456</span>
-    </div>
-    <div class="alert alert-info text-secondary" role="alert">
-      Test Emp2 Email:
-      <span class="fw-bold text-success">emp2@gmail.com</span> Test Emp2
-      password: <span class="fw-bold text-success">123456</span>
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Test User Info
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            Email
+            <span class="fw-bold text-success">admin@gmail.com</span> password:
+            <span class="fw-bold text-success">123456</span>
+            <br />
+            Email:
+            <span class="fw-bold text-success">emp1@gmail.com</span> password:
+            <span class="fw-bold text-success">123456</span>
+            <br />
+            Email:
+            <span class="fw-bold text-success">emp2@gmail.com</span> password:
+            <span class="fw-bold text-success">123456</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <form action="/api/v1/auth/login" method="POST">
+    <form action="/api/v1/auth/login" method="POST" class="pt-2">
       <div class="mb-3">
         <label for="email" class="form-label">Email Address</label>
         <input

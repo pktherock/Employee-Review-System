@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import USER_ROLE from "../../../../../constants/userRole.js";
 
 // User Model
-let empCodeCount = 1; // because 2 emp is already registered
+let empCodeCount = 2; // because 2 emp is already registered
 class UserModel {
   id = uuidv4();
   createdAt = new Date().toISOString();

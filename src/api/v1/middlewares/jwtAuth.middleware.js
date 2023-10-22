@@ -11,11 +11,12 @@ import destroySession from "../../../helpers/destroySession.js";
 
 const jwtAuth = asyncHandler(async (req, res, next) => {
   const { accessToken, refreshToken } = req.session;
-  console.log(accessToken, refreshToken);
+  // console.log(accessToken, refreshToken);
 
   // if not token, then stop here
   if (!(accessToken && refreshToken)) {
-    throw new CustomError("Unauthorized access", STATUS_CODE.UNAUTHORIZED);
+    // throw new CustomError("Unauthorized access", STATUS_CODE.UNAUTHORIZED);
+    return res.status(STATUS_CODE.OK).redirect("/api/v1/auth/login");
   }
 
   try {
@@ -36,7 +37,8 @@ const jwtAuth = asyncHandler(async (req, res, next) => {
           userId: decodedRefreshToken.userId,
           email: decodedRefreshToken.email,
           userName: decodedRefreshToken.userName,
-          role: decodedRefreshToken.role
+          role: decodedRefreshToken.role,
+          roleValue: decodedRefreshToken.roleValue
         };
 
         // generate new access token and attach to the session

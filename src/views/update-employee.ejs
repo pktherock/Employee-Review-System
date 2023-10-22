@@ -1,0 +1,70 @@
+<div class="my-5 d-flex justify-content-center">
+  <div class="card p-5 w-75 shadow">
+    <h1 class="mb-4 header">Update Employee</h1>
+
+    <% if(message) { %>
+    <div class="alert alert-danger" role="alert"><%= message %></div>
+    <% } %> <% if(success) { %>
+    <div class="alert alert-success" role="alert"><%= success %></div>
+    <% } %>
+
+    <form
+      action="/api/v1/employee/update-employee/<%= employee.id %>"
+      method="POST"
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Employee Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="please enter emp name"
+          value="<%= employee.userName %>"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Employee Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="please enter emp email"
+          value="<%= employee.email %>"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="empType" class="form-label">Employee Type</label>
+        <select
+          class="form-select"
+          id="empType"
+          value="<%= employee.role %>"
+          name="empType"
+        >
+          <option value="EMP">Employee</option>
+          <option value="ADMIN">Admin</option>
+        </select>
+      </div>
+      <!-- <div class="mb-3">
+        <label for="password" class="form-label"
+          >Password (optional, if left empty then 123456 will be
+          password)</label
+        >
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="please enter password"
+        />
+      </div> -->
+
+      <button type="submit" class="btn btn-primary w-50">
+        Update Employee
+      </button>
+    </form>
+  </div>
+</div>

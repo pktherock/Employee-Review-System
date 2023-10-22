@@ -8,6 +8,7 @@ const Users = [
     updatedAt: "2023-10-14T03:32:54.027Z",
     lastLoggedInAt: "2023-10-14T03:32:54.027Z",
     role: "ADMIN",
+    roleValue: 777,
   },
   {
     id: "451d3516-b7d7-4e45-b610-c834700335f6",

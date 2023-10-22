@@ -23,11 +23,11 @@
         <!-- todo -->
       </ul>
 
-      <form
+      <!-- <form
         class="d-flex"
         role="search"
         role="search"
-        action="/api/v1/habits/search"
+        action="#"
         method="get"
       >
         <input
@@ -38,7 +38,7 @@
           aria-label="Search"
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> -->
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item dropstart">
           <a
@@ -54,12 +54,7 @@
           <ul class="dropdown-menu">
             <% if (locals.userName) { %>
             <li>
-              <a
-                class="dropdown-item"
-                onclick="handleLogoutBtnClick()"
-                role="button"
-                >Logout</a
-              >
+              <a class="dropdown-item" id="logOutBtn" role="button">Logout</a>
             </li>
             <% } else { %>
             <li>

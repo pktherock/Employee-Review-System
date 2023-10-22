@@ -40,6 +40,7 @@ const errorHandler = async (error, req, res, next) => {
       break;
     case STATUS_CODE.FORBIDDEN:
       errResponse.title = "Permission Denied";
+      break;
     case STATUS_CODE.CONFLICT:
       errResponse.title = "Resource already exist with this info.";
       break;

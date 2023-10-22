@@ -9,6 +9,7 @@ import {
   generateAccessToken,
   generateRefreshToken,
 } from "../../../../../helpers/token.js";
+import USER_ROLE from "../../../../../constants/userRole.js";
 class UserService {
   getUser = async (email) => {
     return Users.find((user) => user.email === email);
@@ -66,8 +67,10 @@ class UserService {
       userId: user.id,
       email,
       userName: user.userName,
-      role: user.role
+      role: user.role,
+      roleValue: user.roleValue || null,
     };
+    // console.log(payload);
     const accessToken = generateAccessToken(payload);
     const refreshToken = generateRefreshToken(payload);
 
@@ -76,6 +79,79 @@ class UserService {
 
     // todo return token
     return { accessToken, refreshToken };
+  };
+
+  getUserById = async (userId) => {
+    // find user by id
+    const user = Users.find(
+      (user) => user.id === userId && user.roleValue !== 777
+    );
+    if (!user) {
+      throw new CustomError("User not found", STATUS_CODE.NOT_FOUND);
+    }
+
+    // delete password and return user info
+    const userCopy = { ...user };
+    delete userCopy.password;
+    return userCopy;
+  };
+
+  updateUser = async (userId, userInfo) => {
+    const { name, email, empType } = userInfo;
+    console.log(userInfo);
+    // find email already exist or not
+    const user = Users.find(
+      (user) => user.id !== userId && user.email === email
+    );
+
+    if (user) {
+      throw new CustomError(
+        "User already exist with this info",
+        STATUS_CODE.CONFLICT
+      );
+    }
+
+    // find index
+    const index = Users.findIndex((user) => user.id == userId);
+    if (index === -1) {
+      throw new CustomError("User not found", STATUS_CODE.NOT_FOUND);
+    }
+
+    // update user
+    Users.splice(index, 1, {
+      ...Users[index],
+      userName: name,
+      role: empType,
+      email,
+    });
+
+    // delete password while returning
+    const updatedUser = { ...Users[index] };
+    delete updatedUser.password;
+
+    // 5. return updated user
+    return updatedUser;
+  };
+
+  deleteUser = async (userId) => {
+    // find index
+    const index = Users.findIndex((user) => user.id == userId);
+    if (index === -1) {
+      throw new CustomError("User not found", STATUS_CODE.NOT_FOUND);
+    }
+
+    // if user is admin stop here
+    if (Users[index]?.roleValue === 777) {
+      throw new CustomError("You can not edit this user", STATUS_CODE.CONFLICT);
+    }
+
+    // store for returning deleted user
+    const user = { ...Users[index] };
+
+    // delete user
+    Users.splice(index, 1);
+
+    return user;
   };
 }
 
