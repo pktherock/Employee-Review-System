@@ -7,6 +7,8 @@ Object.freeze(USER_ROLE);
 
 const userRoles = Object.keys(USER_ROLE);
 
-export { userRoles };
+const superAdminRoleValue = 777;
+
+export { userRoles,superAdminRoleValue };
 
 export default USER_ROLE;

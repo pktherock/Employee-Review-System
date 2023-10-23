@@ -1,7 +1,32 @@
 import ReviewModel from "../models/review.model.js";
 import Reviews from "../../../../../lib/localDB/reviews.js";
+import REVIEW_STATUS from "../../../../../constants/reviewStatus.js";
 
 class ReviewService {
+  getAllReviews = async () => {
+    return Reviews.filter((review) => review.status === REVIEW_STATUS.PENDING);
+  };
+
+  getAllFeedbacks = async () => {
+    return Reviews.filter((review) => review.status === REVIEW_STATUS.REVIEWED);
+  };
+
+  getAllUserReviews = async (email) => {
+    return Reviews.filter(
+      (review) =>
+        (review.assignedBy === email || review.assignedTo === email) &&
+        review.status === REVIEW_STATUS.PENDING
+    );
+  };
+
+  getAllUserFeedbacks = async (email) => {
+    return Reviews.filter(
+      (review) =>
+        (review.assignedBy === email || review.assignedTo === email) &&
+        review.status === REVIEW_STATUS.REVIEWED
+    );
+  };
+
   createReview = async (data) => {
     const {
       emailFrom: assignedTo,

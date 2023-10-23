@@ -8,6 +8,9 @@ const reviewRouter = Router();
 
 reviewRouter.use(jwtAuth);
 
+reviewRouter.get("/", reviewController.getAllReview);
+reviewRouter.get("/feedback", reviewController.getAllFeedback);
+
 reviewRouter.post(
   "/",
   isAdmin,

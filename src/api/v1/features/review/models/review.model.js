@@ -6,6 +6,8 @@ class ReviewModel {
   status = REVIEW_STATUS.PENDING;
   createdAt = new Date().toISOString();
   updatedAt = new Date().toISOString();
+  reviewedBy = "";
+  reviewedOn = "";
   content = "";
 
   constructor(assignedTo, assignedFor, assignedBy){

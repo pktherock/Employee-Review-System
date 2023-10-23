@@ -12,6 +12,7 @@ const setLastVisit = (req, res, next) => {
       // console.log(payload);
       res.locals.userName = payload.userName;
       res.locals.role = payload.role;
+      res.locals.email = payload.email;
       res.locals.roleValue = payload.roleValue ?? null;
       // console.log(payload);
     } catch (error) {
