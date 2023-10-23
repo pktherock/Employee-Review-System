@@ -41,7 +41,7 @@ class ReviewController {
     }
 
     // console.log(feedbacks);
-    return res.status(STATUS_CODE.OK).render("feedback-list", { feedbacks });
+    return res.status(STATUS_CODE.OK).render("feedback-lists", { feedbacks });
   });
 
   assignEmpForReview = asyncHandler(async (req, res) => {

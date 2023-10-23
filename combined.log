@@ -1,0 +1,8 @@
+{"level":"info","message":{"reqBody":{},"reqUrl":"/api/v1/review/feedback","timeStamp":"Tue Oct 24 2023 01:00:47 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/popper.min.js.map","timeStamp":"Tue Oct 24 2023 01:00:47 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/bootstrap.min.js.map","timeStamp":"Tue Oct 24 2023 01:00:47 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/popper.min.js.map","timeStamp":"Tue Oct 24 2023 01:00:55 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/bootstrap.min.js.map","timeStamp":"Tue Oct 24 2023 01:00:55 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/api/v1/review/feedback","timeStamp":"Tue Oct 24 2023 01:00:57 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/popper.min.js.map","timeStamp":"Tue Oct 24 2023 01:00:57 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/bootstrap.min.js.map","timeStamp":"Tue Oct 24 2023 01:00:57 GMT+0530 (India Standard Time)"},"service":"request-logging"}
