@@ -60,6 +60,18 @@ class ReviewService {
 
     return Reviews[reviewIdx];
   };
+
+  deleteReviewById = async (id) => {
+    const reviewIdx = Reviews.findIndex((review) => review.id === id);
+    if (reviewIdx === -1) {
+      throw new CustomError("No Review found", STATUS_CODE.NOT_FOUND);
+    }
+
+    const reviewCopy = { ...Reviews[reviewIdx] };
+    Reviews.splice(reviewIdx, 1);
+
+    return reviewCopy;
+  };
 }
 
 const reviewService = new ReviewService();

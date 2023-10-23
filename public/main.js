@@ -53,3 +53,37 @@ const empType = document.getElementById("empType");
 if (empType) {
   empType.value = empType?.getAttribute("value");
 }
+
+const DeleteReview = Array.from(
+  document.getElementsByClassName("deleteReview")
+);
+
+DeleteReview.forEach((review) => {
+  review.addEventListener("click", () => {
+    const reviewId = review.getAttribute("reviewId");
+    console.log(reviewId);
+    deleteReview(reviewId);
+  });
+});
+
+async function deleteReview(reviewId) {
+  const isUserConfirm = confirm("Are you sure? you want to delete.");
+  if (isUserConfirm) {
+    const options = {
+      method: "DELETE",
+    };
+
+    try {
+      const response = await fetch(`/api/v1/review/${reviewId}`, options);
+
+      if (response.status === 200) {
+        location.reload();
+      } else {
+        alert("error while deleting..");
+        console.log(error);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}

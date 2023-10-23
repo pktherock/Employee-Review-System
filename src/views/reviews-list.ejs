@@ -3,6 +3,7 @@
     <tr>
       <th scope="col">Emp Email</th>
       <th scope="col">Assigned BY</th>
+      <th scope="col">Assigned TO</th>
       <th scope="col">Assigned ON</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
@@ -13,6 +14,7 @@
     <tr>
       <td scope="row"><%= review.assignedFor %></td>
       <td><%= review.assignedBy %></td>
+      <td><%= review.assignedTo %></td>
       <td><%= new Date(review.createdAt).toLocaleString() %></td>
       <td><%= review.status %></td>
 

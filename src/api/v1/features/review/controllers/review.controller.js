@@ -24,7 +24,7 @@ class ReviewController {
       reviews = await reviewService.getAllUserReviews(email);
     }
 
-    console.log(reviews);
+    // console.log(reviews);
     return res.status(STATUS_CODE.OK).render("reviews-list", { reviews });
   });
 
@@ -40,7 +40,7 @@ class ReviewController {
       feedbacks = await reviewService.getAllUserFeedbacks(email);
     }
 
-    console.log(feedbacks);
+    // console.log(feedbacks);
     return res.status(STATUS_CODE.OK).render("feedback-list", { feedbacks });
   });
 
@@ -53,7 +53,7 @@ class ReviewController {
       email,
     });
 
-    console.log(review);
+    // console.log(review);
 
     return res.status(STATUS_CODE.CREATED).redirect("/api/v1/employee");
   });
@@ -63,15 +63,21 @@ class ReviewController {
     const { id } = req.params;
     const { email } = req.user;
     const { content } = req.body;
-    console.log(id, email, content);
+    // console.log(id, email, content);
 
     const review = await reviewService.updateReview(id, email, content);
-    console.log(review);
+    // console.log(review);
 
     return res.status(STATUS_CODE.REDIRECT).redirect("/api/v1/review/feedback");
   });
 
-  deleteReview = asyncHandler(async (req, res) => {});
+  deleteReview = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const review = await reviewService.deleteReviewById(id);
+    return res
+      .status(STATUS_CODE.OK)
+      .json({ success: true, message: "review deleted successfully!" });
+  });
 }
 
 const reviewController = new ReviewController();
