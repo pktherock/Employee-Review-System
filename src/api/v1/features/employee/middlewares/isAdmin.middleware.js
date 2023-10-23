@@ -8,7 +8,10 @@ const isAdmin = asyncHandler((req, res, next) => {
   // console.log(role);
 
   if (role !== USER_ROLE.ADMIN) {
-    throw new CustomError("Unauthorized Access", STATUS_CODE.FORBIDDEN);
+    throw new CustomError(
+      "You are not allowed to do this",
+      STATUS_CODE.FORBIDDEN
+    );
   }
 
   return next();
