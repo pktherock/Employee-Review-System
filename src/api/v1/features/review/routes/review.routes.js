@@ -1,9 +1,11 @@
 import { Router } from "express";
 import reviewController from "../controllers/review.controller.js";
 import jwtAuth from "../../../middlewares/jwtAuth.middleware.js";
-import { isAdmin } from "../../employee/index.js";
+import { isAdmin, isSuperAdmin } from "../../employee/index.js";
 import newReviewValidator from "../validators/newReview.validator.js";
 import isEmailExists from "../middlewares/isEmailExists.middleware.js";
+import isValidReviewer from "../middlewares/isValidReviewer.middleware.js";
+import reviewValidator from "../validators/review.validator.js";
 const reviewRouter = Router();
 
 reviewRouter.use(jwtAuth);
@@ -19,8 +21,15 @@ reviewRouter.post(
   reviewController.assignEmpForReview
 );
 
-reviewRouter.get("/:id", reviewController.getReviewById);
+reviewRouter.get("/:id", isValidReviewer, reviewController.getReviewById);
 
-reviewRouter.post("/:id", reviewController.updateReview);
+reviewRouter.post(
+  "/:id",
+  reviewValidator,
+  isValidReviewer,
+  reviewController.updateReview
+);
+
+reviewRouter.delete("/:id", isSuperAdmin, reviewController.deleteReview);
 
 export default reviewRouter;

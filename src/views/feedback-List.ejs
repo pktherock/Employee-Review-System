@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th scope="col">Emp Email</th>
+      <th scope="col">Assigned BY</th>
       <th scope="col">Reviewed BY</th>
       <th scope="col">Reviewed ON</th>
       <th scope="col">Status</th>
@@ -12,6 +13,7 @@
     <% if(feedbacks.length) { feedbacks.forEach(review => { %>
     <tr>
       <td scope="row"><%= review.assignedFor %></td>
+      <td><%= review.assignedBy %></td>
       <td><%= review.reviewedBy %></td>
       <td><%= new Date(review.reviewedOn).toLocaleString() %></td>
       <td><%= review.status %></td>

@@ -1,0 +1,27 @@
+<div class="my-5 d-flex justify-content-center">
+  <div class="card p-5 w-75 shadow">
+    <h1 class="mb-4 header">
+      Giving Review to Emp:
+      <span class="text-info"><%= userName %></span> (<%= review.assignedFor %>)
+    </h1>
+    <form action="/api/v1/review/<%= review.id %>" method="POST">
+      <div class="mb-3">
+        <label for="content" class="form-label">Write you review here</label>
+        <textarea
+          type="text"
+          class="form-control"
+          id="content"
+          name="content"
+          rows="5"
+          required
+        >
+<%= review.content %></textarea
+        >
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        <%= review.status === "REVIEWED" ? "Update": "Submit" %> Review
+      </button>
+    </form>
+  </div>
+</div>
