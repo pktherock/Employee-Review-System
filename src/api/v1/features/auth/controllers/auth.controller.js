@@ -41,7 +41,7 @@ class AuthController {
     sendEmail(
       newUser.email,
       "Registration Successful",
-      "Welcome to next generation Habit tracker app"
+      "Welcome to next generation employee review system app"
     );
 
     // if you are creating Only API then return this
