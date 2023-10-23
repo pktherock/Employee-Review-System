@@ -498,3 +498,12 @@
 {"level":"info","message":{"reqBody":{},"reqUrl":"/api/v1/review","timeStamp":"Mon Oct 23 2023 23:55:51 GMT+0530 (India Standard Time)"},"service":"request-logging"}
 {"level":"info","message":{"reqBody":{},"reqUrl":"/api/v1/review/feedback","timeStamp":"Mon Oct 23 2023 23:56:26 GMT+0530 (India Standard Time)"},"service":"request-logging"}
 {"level":"info","message":{"reqBody":{},"reqUrl":"/api/v1/review","timeStamp":"Mon Oct 23 2023 23:56:30 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/api/v1/review/feedback","timeStamp":"Tue Oct 24 2023 00:09:30 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/popper.min.js.map","timeStamp":"Tue Oct 24 2023 00:09:30 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/bootstrap.min.js.map","timeStamp":"Tue Oct 24 2023 00:09:30 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/popper.min.js.map","timeStamp":"Tue Oct 24 2023 00:09:32 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/bootstrap.min.js.map","timeStamp":"Tue Oct 24 2023 00:09:32 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/popper.min.js.map","timeStamp":"Tue Oct 24 2023 00:09:32 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/bootstrap.min.js.map","timeStamp":"Tue Oct 24 2023 00:09:32 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/popper.min.js.map","timeStamp":"Tue Oct 24 2023 00:11:59 GMT+0530 (India Standard Time)"},"service":"request-logging"}
+{"level":"info","message":{"reqBody":{},"reqUrl":"/js/bootstrap.min.js.map","timeStamp":"Tue Oct 24 2023 00:11:59 GMT+0530 (India Standard Time)"},"service":"request-logging"}

@@ -7,7 +7,10 @@
 - Authentication and Authorization using jwt token
 - Session management
 - Usage of ejs to show UI
-- Add and Track Habits on a Daily and weekly basis
+- Making employee as admin
+- Assign one employee to another for review
+- Edit and delete review
+- Tracking feedbacks
 - Resource Management
 - Global Error Handling
 - Logging Request and errors
