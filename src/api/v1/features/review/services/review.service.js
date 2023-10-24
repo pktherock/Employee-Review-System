@@ -10,11 +10,19 @@ class ReviewService {
   };
 
   getAllReviews = async () => {
-    return Reviews.filter((review) => review.status === REVIEW_STATUS.PENDING);
+    return Reviews.filter(
+      (review) => review.status === REVIEW_STATUS.PENDING
+    ).sort((a, b) =>
+      a.createdAt > b.createdAt ? -1 : a.createdAt < b.createdAt ? 1 : 0
+    );
   };
 
   getAllFeedbacks = async () => {
-    return Reviews.filter((review) => review.status === REVIEW_STATUS.REVIEWED);
+    return Reviews.filter(
+      (review) => review.status === REVIEW_STATUS.REVIEWED
+    ).sort((a, b) =>
+      a.reviewedOn > b.reviewedOn ? -1 : a.reviewedOn < b.reviewedOn ? 1 : 0
+    );
   };
 
   getAllUserReviews = async (email) => {
@@ -22,6 +30,8 @@ class ReviewService {
       (review) =>
         (review.assignedBy === email || review.assignedTo === email) &&
         review.status === REVIEW_STATUS.PENDING
+    ).sort((a, b) =>
+      a.createdAt > b.createdAt ? -1 : a.createdAt < b.createdAt ? 1 : 0
     );
   };
 
@@ -30,6 +40,8 @@ class ReviewService {
       (review) =>
         (review.assignedBy === email || review.assignedTo === email) &&
         review.status === REVIEW_STATUS.REVIEWED
+    ).sort((a, b) =>
+      a.reviewedOn > b.reviewedOn ? -1 : a.reviewedOn < b.reviewedOn ? 1 : 0
     );
   };
 
